@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;1,100;1,300;1,400;1,500&family=Orbitron&display=swap');
+
+body{
+  font-family: "Montserrat";
+  background-color: aliceblue;
+  padding: 0px;
+  margin:0px;
+}
+
+/* home page*/
+
+.notes{
+  display: flex;
+  flex-direction: column;
+  margin :5px 10px;
+  width: 70%;
+}
+
+.note-container{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 2px 2px 0.5px rgba(0, 0, 0, 0.469);
+  margin-bottom: 10px;
+  padding :10px 20px;
+}
+
+.layout{
+  display: flex;
+  justify-content: space-around;
+  margin: 55px;
+}
+
+
+/* Note creation form */
+.create-form{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 2px 2px 0.5px rgba(0, 0, 0, 0.469);
+  padding: 20px 40px;
+  width: 30%;
+  margin: 5px 20px;
+}
+
+.create-form .input{
+  display: flex;
+  flex-direction: column;
+  margin :10px 0px;
+  font-weight: 500;
+}
+
+.create-form .input label{
+  margin-bottom: 10px;
+}
+
+.create-form button{
+  font-family: "Montserrat";
+  padding:8px 15px;
+  margin-top :8px;
+  max-width: fit-content;
+  border: none;
+  border-radius: 7%;
+  font-size: 17px;
+  background-color: rgb(45, 190, 62);
+  color: white;
+}
+
+/* Navbar */
+.navbar{
+  display: flex;
+  background-color: rgb(45, 190, 62);
+  color: white;
+}
+
+.navbar h2{
+  margin: 5px 20px;
+}
+
+.navbar .nav-links{
+  display: flex;
+  list-style: none;
+  font-size: 20px;
+  margin: 5px 20px;
+}
+
+.nav-links li{
+  margin: 5px 15px;
+}
