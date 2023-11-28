@@ -1,5 +1,11 @@
 const mongoose = require("mongoose");
 const Note = require("../models/notesModel.js");
+const { MongoClient } = require("mongodb");
+
+// const client = new MongoClient(process.env.DB_URI);
+// const db = client.db("Notes-app");
+
+// const Note = db.collection("Notes");
 
 // To send all Notes
 const showAllNotes = async (req, res) => {

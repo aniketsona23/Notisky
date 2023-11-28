@@ -21,6 +21,7 @@ const CreateNote = () => {
 
     if (!response.ok) {
       setError(json.error);
+      console.log(error);
     } else {
       setError(null);
       setTitle("");

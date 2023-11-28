@@ -11,6 +11,7 @@ app.use(express.json());
 app.use("/api/", router);
 
 //Connecting to database
+
 mongoose
   .connect(process.env.DB_URI)
   .then(() => {

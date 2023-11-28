@@ -7,6 +7,23 @@ body{
   margin:0px;
 }
 
+button{
+  font-family: "Montserrat";
+  padding:8px 15px;
+  margin-top :8px;
+  max-width: fit-content;
+  border: none;
+  border-radius: 7%;
+  font-size: 17px;
+  background-color: rgb(45, 190, 62);
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+button:hover{
+  cursor: pointer;
+}
 /* home page*/
 
 .notes{
@@ -23,6 +40,26 @@ body{
   box-shadow: 2px 2px 0.5px rgba(0, 0, 0, 0.469);
   margin-bottom: 10px;
   padding :10px 20px;
+   border-radius: 20px;
+}
+.note-container header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.note-container header p{
+  font-weight: light;
+  font-size: smaller;
+}
+
+.note-container footer{
+  margin:10px 0px;
+}
+
+.note-container footer button{
+  font-size: 13px;
+  margin-left: 10px;
 }
 
 .layout{
@@ -53,18 +90,11 @@ body{
 .create-form .input label{
   margin-bottom: 10px;
 }
-
-.create-form button{
-  font-family: "Montserrat";
-  padding:8px 15px;
-  margin-top :8px;
-  max-width: fit-content;
-  border: none;
-  border-radius: 7%;
-  font-size: 17px;
-  background-color: rgb(45, 190, 62);
-  color: white;
+.create-form .input input,textarea{
+  border: 0.5px solid rgba(0, 0, 0, 0.265);
 }
+
+
 
 /* Navbar */
 .navbar{
@@ -86,4 +116,9 @@ body{
 
 .nav-links li{
   margin: 5px 15px;
+}
+
+.nav-links a{
+  text-decoration: none;
+  color: white;
 }
