@@ -64,6 +64,7 @@ border-radius: 5px;
 
 .note-container:hover{
   background-color: rgb(241, 239, 239);
+  cursor: pointer;
 }
 .note-container header{
   display: flex;
@@ -71,10 +72,13 @@ border-radius: 5px;
   justify-content: space-between;
 }
 
-.note-container header p{
+.note-container header p,span{
   font-weight: light;
-  font-size: smaller;
 }
+.note-container header span{
+  font-size: 10px;
+}
+
 
 .note-container footer{
   margin:10px 0px;

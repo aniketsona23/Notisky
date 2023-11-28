@@ -32,7 +32,7 @@ const UpdateNote = ({ note }) => {
 
   return (
     <form className="create-form" onSubmit={handleOnSubmit}>
-      <h2>Add new Note</h2>
+      <h2>Update Note</h2>
 
       <div className="input">
         <label htmlFor="title-inp">Title</label>

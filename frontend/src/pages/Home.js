@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 //components
 import NotesDetails from "../components/SingleNote";
-import UpdateNote from "../components/CreateNote";
+import UpdateNote from "../components/UpdateNote";
 
 const Home = () => {
   const [notes, setNotes] = useState([]);
@@ -24,9 +24,9 @@ const Home = () => {
       },
     });
 
+    const json = await response.json();
     if (response.ok) {
       setNotes([newNote, ...notes]);
-      console.log(response.json());
     }
   };
   useEffect(() => {
@@ -37,11 +37,12 @@ const Home = () => {
 
       if (response.ok) {
         setNotes(json);
+        console.log(notes);
       }
     };
 
     fetchNotes();
-  }, []);
+  }, [notes]);
 
   const findNote = () => {
     setNotes(
@@ -63,7 +64,7 @@ const Home = () => {
               value={search}
               placeholder="Search Note"
               onChange={(e) => setSearch(e.target.value)}
-              onClick={findNote}
+              onEnded={findNote}
             />
           </header>
           {notes &&

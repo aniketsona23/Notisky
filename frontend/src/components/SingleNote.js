@@ -14,9 +14,10 @@ const NotesDetails = ({ note, activateNote }) => {
   };
 
   return (
-    <div className="note-container">
+    <div className="note-container" onClick={() => activateNote(note._id)}>
       <header>
         <h4>{note.title}</h4>
+        <span>{note.category}</span>
         <p>
           {new Date(note.updatedAt).getDate()} /{" "}
           {new Date(note.updatedAt).getMonth()} /{" "}
@@ -26,7 +27,6 @@ const NotesDetails = ({ note, activateNote }) => {
       </header>
       <footer>
         <button onClick={deleteNote}>Delete</button>
-        <button onClick={() => activateNote(note._id)}>Edit</button>
       </footer>
     </div>
   );
