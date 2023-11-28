@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 //components
 import NotesDetails from "../components/SingleNote";
-import CreateNote from "./CreateNote";
 
 const Home = () => {
   const [notes, setNotes] = useState([]);

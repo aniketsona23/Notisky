@@ -25,8 +25,8 @@ const CreateNote = () => {
     } else {
       setError(null);
       setTitle("");
-      setCategory("");
       setContent("");
+      setCategory("");
       console.log("New Note added => \n" + json);
     }
   };

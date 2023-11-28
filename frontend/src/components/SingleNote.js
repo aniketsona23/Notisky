@@ -1,4 +1,18 @@
 const NotesDetails = ({ note }) => {
+  const deleteNote = async () => {
+    const response = await fetch("/api/" + note._id, {
+      method: "DELETE",
+    });
+
+    const json = response.json();
+
+    if (!response.ok) {
+      console.log("Note not Deleted");
+    } else {
+      console.log("Note Deleted");
+    }
+  };
+
   return (
     <div className="note-container">
       <header>
@@ -14,7 +28,7 @@ const NotesDetails = ({ note }) => {
         <p>{note.content}</p>
       </main>
       <footer>
-        <button>Delete</button>
+        <button onClick={deleteNote}>Delete</button>
         <button>Edit</button>
       </footer>
     </div>
