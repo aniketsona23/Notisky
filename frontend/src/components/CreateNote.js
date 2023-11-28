@@ -1,35 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const CreateNote = () => {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [category, setCategory] = useState("");
+const UpdateNote = ({ note }) => {
+  const [title, setTitle] = useState(note.title);
+  const [content, setContent] = useState(note.content);
+  const [category, setCategory] = useState(note.category);
   const [error, setError] = useState([]);
+
+  useEffect(() => {
+    setTitle(note.title);
+    setContent(note.content);
+    setCategory(note.category);
+  }, [note]);
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
 
     const notes = { title, content, category };
-    const response = await fetch("/api", {
-      method: "POST",
+    const response = await fetch("/api/" + note._id, {
+      method: "PATCH",
       body: JSON.stringify(notes),
       headers: {
         "Content-Type": "application/json",
       },
     });
     const json = await response.json();
-
     if (!response.ok) {
       setError(json.error);
       console.log(error);
-    } else {
-      setError(null);
-      setTitle("");
-      setContent("");
-      setCategory("");
-      console.log("New Note added => \n" + json);
     }
   };
+
   return (
     <form className="create-form" onSubmit={handleOnSubmit}>
       <h2>Add new Note</h2>
@@ -47,6 +47,8 @@ const CreateNote = () => {
       <div className="input">
         <label htmlFor="content-inp">Content</label>
         <textarea
+          placeholder="Write Something Here...."
+          rows={10}
           value={content}
           onChange={(e) => setContent(e.target.value)}
           id="content-inp"
@@ -56,16 +58,20 @@ const CreateNote = () => {
       <div className="input">
         <label htmlFor="category-inp">Category</label>
         <input
-          title={category}
+          value={category}
           onChange={(e) => setCategory(e.target.value)}
           type="text"
           id="category-inp"
         />
       </div>
 
-      <button>Create</button>
+      <button>Done</button>
     </form>
   );
 };
 
-export default CreateNote;
+UpdateNote.defaultProps = {
+  note: { title: "", content: "", category: "" },
+};
+
+export default UpdateNote;

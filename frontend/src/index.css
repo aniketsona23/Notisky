@@ -9,16 +9,17 @@ body{
 
 button{
   font-family: "Montserrat";
-  padding:8px 15px;
+  padding:8px 10px;
   margin-top :8px;
   max-width: fit-content;
   border: none;
   border-radius: 7%;
-  font-size: 17px;
-  background-color: rgb(45, 190, 62);
-  color: white;
+  font-size: 15px;
+  background-color: transparent;
+  color: rgb(45, 190, 62);
   font-weight: 700;
   letter-spacing: 0.5px;
+
 }
 
 button:hover{
@@ -29,18 +30,40 @@ button:hover{
 .notes{
   display: flex;
   flex-direction: column;
-  margin :5px 10px;
-  width: 70%;
+  margin : 0px;
+  width: 60%;
+  background-color: white;
+  border-right: 1px rgba(0, 0, 0, 0.191) solid;
+}
+.notes header h2{
+  margin: 20px;
+  
+}
+.notes header input{
+  height: fit-content;
+  border: 1px rgba(0, 0, 0, 0.396) solid;
+  padding: 5px 10px;
+border-radius: 5px;
+  ;
 }
 
+.notes header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
 .note-container{
   display: flex;
   flex-direction: column;
   background-color: white;
-  box-shadow: 2px 2px 0.5px rgba(0, 0, 0, 0.469);
-  margin-bottom: 10px;
   padding :10px 20px;
-   border-radius: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.191);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.066);
+}
+
+.note-container:hover{
+  background-color: rgb(241, 239, 239);
 }
 .note-container header{
   display: flex;
@@ -58,26 +81,31 @@ button:hover{
 }
 
 .note-container footer button{
-  font-size: 13px;
+  font-size: 12px;
   margin-left: 10px;
 }
 
 .layout{
   display: flex;
-  justify-content: space-around;
-  margin: 55px;
+  justify-content: space-around;  
 }
 
 
 /* Note creation form */
+.new-note {
+  width: 50%;
+  background-color: white;
+  padding: 5px 20px;
+}
+
 .create-form{
   display: flex;
   flex-direction: column;
   background-color: white;
-  box-shadow: 2px 2px 0.5px rgba(0, 0, 0, 0.469);
-  padding: 20px 40px;
-  width: 30%;
-  margin: 5px 20px;
+  margin: 5px 10px;
+  width: 100%;
+
+
 }
 
 .create-form .input{
@@ -87,11 +115,17 @@ button:hover{
   font-weight: 500;
 }
 
+.create-form .input textarea{
+  resize: vertical;
+  font-family: "Montserrat";
+}
 .create-form .input label{
   margin-bottom: 10px;
 }
 .create-form .input input,textarea{
   border: 0.5px solid rgba(0, 0, 0, 0.265);
+  padding: 5px 10px;
+  width: 70%;
 }
 
 
@@ -101,24 +135,10 @@ button:hover{
   display: flex;
   background-color: rgb(45, 190, 62);
   color: white;
+  margin: 0px;
 }
 
 .navbar h2{
-  margin: 5px 20px;
+  margin: 10px 20px;
 }
 
-.navbar .nav-links{
-  display: flex;
-  list-style: none;
-  font-size: 20px;
-  margin: 5px 20px;
-}
-
-.nav-links li{
-  margin: 5px 15px;
-}
-
-.nav-links a{
-  text-decoration: none;
-  color: white;
-}

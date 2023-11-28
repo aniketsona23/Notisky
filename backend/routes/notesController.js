@@ -9,7 +9,7 @@ const { MongoClient } = require("mongodb");
 
 // To send all Notes
 const showAllNotes = async (req, res) => {
-  const notes = await Note.find({}).sort({ title: -1 });
+  const notes = await Note.find({}).sort({ updatedAt: -1 });
   res.status(200).json(notes);
 };
 
